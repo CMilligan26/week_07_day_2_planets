@@ -93,7 +93,7 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("const planetsData = __webpack_require__(/*! ./data/planets.js */ \"./src/data/planets.js\");\nconst MenuChoice = __webpack_require__(/*! ./views/menu_choice.js */ \"./src/views/menu_choice.js\");\nconst ShowPlanet = __webpack_require__(/*! ./views/show_planet.js */ \"./src/views/show_planet.js\");\nconst SolarSystem = __webpack_require__(/*! ./models/solar_system.js */ \"./src/models/solar_system.js\");\n\ndocument.addEventListener('DOMContentLoaded', () => {\n  const planetsDataModel = new SolarSystem(planetsData);\n  planetsDataModel.bindEvents();\n  const menuChoice = new MenuChoice(document.querySelector('.planets-menu'));\n  menuChoice.selectedOption();\n  const showPlanet = new ShowPlanet();\n  showPlanet.bindEvents();\n});\n\n\n//# sourceURL=webpack:///./src/app.js?");
+eval("const planetsData = __webpack_require__(/*! ./data/planets.js */ \"./src/data/planets.js\");\nconst MenuChoice = __webpack_require__(/*! ./views/menu_choice.js */ \"./src/views/menu_choice.js\");\nconst ShowPlanet = __webpack_require__(/*! ./views/show_planet.js */ \"./src/views/show_planet.js\");\nconst SolarSystem = __webpack_require__(/*! ./models/solar_system.js */ \"./src/models/solar_system.js\");\n\ndocument.addEventListener('DOMContentLoaded', () => {\n  const planetsDataModel = new SolarSystem(planetsData);\n  planetsDataModel.bindEvents();\n\n  const menuChoice = new MenuChoice(document.querySelector('.planets-menu'));\n  menuChoice.selectedOption();\n  \n  const showPlanet = new ShowPlanet();\n  showPlanet.bindEvents();\n});\n\n\n//# sourceURL=webpack:///./src/app.js?");
 
 /***/ }),
 
