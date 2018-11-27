@@ -14,11 +14,13 @@ ShowPlanet.prototype.bindEvents = function (){
 
 ShowPlanet.prototype.displayPlanetDetails = function (planetData){
   const section = document.querySelector(".planet-details");
-  const list = document.createElement("ul");
+  const list = document.createElement("div");
+  list.className = 'planet-details';
   const dataArray = Object.values(planetData);
+  const dataKeys = Object.keys(planetData);
   dataArray.splice(dataArray.length-1, 1)
   for (const data of dataArray) {
-  list.appendChild(this.createCustomElement('li',"textContent",data));
+  list.appendChild(this.createCustomElement('p',"textContent",`${dataKeys[dataArray.indexOf(data)].toUpperCase().replace('_', ' ')}: ${data}`));
   }
   section.appendChild(list);
 }
@@ -26,11 +28,11 @@ ShowPlanet.prototype.displayPlanetDetails = function (planetData){
 ShowPlanet.prototype.displayPlanetImage = function (planetData) {
   const section = document.querySelector(".planet-details");
   const image = this.createCustomElement('img', 'src', `../public/${planetData.image}`);
+  image.className = "planet_image";
   section.appendChild(image);
 }
 
 ShowPlanet.prototype.createCustomElement = function (element,attr,value){
-  debugger;
   const listItem = document.createElement(element);
   listItem[attr] = value;
   return listItem;
